@@ -5,7 +5,7 @@ import pytest
 
 # Открываем файл
 
-f = open("E:\\PyTestSimple\\indian_pytest\\tags.csv", "tr", encoding="utf-8")
+f = open("../Environment/tags.csv", "tr", encoding="utf-8")
 
 # список для хранения тегов для поиска
 
@@ -23,7 +23,7 @@ f.close()
 
 # Выполнения скрипта в Chrome
 
-driver = Chrome("C:\\Users\\vchernov\\Desktop\\drivers\\chromedriver.exe")
+driver = Chrome("../Environment/Drivers/chromedriver.exe")
 driver.implicitly_wait(20)
 driver.set_page_load_timeout(20)
 driver.maximize_window()
@@ -75,7 +75,7 @@ for tag_element in tags_arr:
 # запись в файл собранных результатов
 
 
-with io.open("E:\\PyTestSimple\\indian_pytest\\results.csv", "tw", encoding="utf-8") as f:
+with io.open("../Environment/results.csv", "tw", encoding="utf-8") as f:
     for line in result_arr:
         f.write(line + "\n")
 
