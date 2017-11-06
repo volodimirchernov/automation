@@ -4,16 +4,22 @@
 # File list:
 
 positionable_delete_file_button_Xpath = "(.//i[@class='i i-close'])[position]"
+# - check count of documents in file list
 positionable_view_file_button_Xpath = "(.//i[@class='i i-page-preview'])[position]"
+# - check color of element by css selector
 positionable_file_list_canvas_Xpath = "(.//div[@class='document-preview__canvas'])[position]"
+# - check by equal with icon
 add_another_document_button_Xpath = ".//div[@class='doc-collaboration-action-btn']"
+# - modal is open
 positionable_name_of_file__file_list_text_Xpath = "(.//div[@class='doc-collab-list-item__name'])[position]"
+# - check by name
 positionable_date_of_last_update__file_list_text_Xpath = "(.//div[@class='doc-collab-list-item__date'])[position]"
-
+# - save date and equal
 
 # Select Format and Destination:
 
-format_destination_tab_Xpath = ".//div[@class='i i-format large-panel-header__icon']"
+format_destination_tab_Xpath = "(.//div[@class='react-panel__header'])[2]"
+format_destination_tab_icon_Xpath = ".//div[@class='i i-format large-panel-header__icon']"
 
 # -- Formats
 
@@ -41,7 +47,8 @@ positionable_format_item_Xpath = "(.//label[@class='save-configuration-list-item
 
 # Set Export Options
 
-set_export_options_icon_Xpath = ".//div[@class='i i-outline-settings large-panel-header__icon']"
+set_export_options_tab_Xpath = "(.//div[@class='react-panel__header'])[3]"
+set_export_options_tab_icon_Xpath = ".//div[@class='i i-outline-settings large-panel-header__icon']"
 
 save_with_fillable_fields_switch_Xpath = ".//div[@class='settings-panel']/div/div/div/div[1]/div[2]/div"
 save_content_only_switch_Xpath = ".//div[@class='settings-panel']/div/div/div/div[2]/div[2]/div"
