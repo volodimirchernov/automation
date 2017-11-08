@@ -4,11 +4,11 @@
 # File list:
 
 positionable_delete_file_button_Xpath = "(.//i[@class='i i-close'])[position]"
-# - check count of documents in file list
+# - check count of documents in file list count(xpath)
 positionable_view_file_button_Xpath = "(.//i[@class='i i-page-preview'])[position]"
 # - check color of element by css selector
 positionable_file_list_canvas_Xpath = "(.//div[@class='document-preview__canvas'])[position]"
-# - check by equal with icon
+# - check by equal with icon / check is unknown icon
 add_another_document_button_Xpath = ".//div[@class='doc-collaboration-action-btn']"
 # - modal is open
 positionable_name_of_file__file_list_text_Xpath = "(.//div[@class='doc-collab-list-item__name'])[position]"
@@ -139,4 +139,12 @@ faq__report_modal_tab_icon_Xpath = ".//span[@class='i i-help feedback-module-tab
 suggestion__report_modal_tab_icon_Xpath = ".//span[@class='i i-suggested-docs feedback-module-tab__icon']"
 problem__report_modal_tab_icon_Xpath = ".//span[@class='i i-error feedback-module-tab__icon']"
 
+# File Picker
+
+# -- Tabs
+
+active_tab = ".//div[@class='g-tabs-list__item g-tabs-list__item--icon is-active']"
+
 #
+file_list_item_Xpath = ".//div[@class='mf-doc__item']"
+positionable_file_list_item_Xpath = "(.//div[@class='mf-doc__item'])[position]"
