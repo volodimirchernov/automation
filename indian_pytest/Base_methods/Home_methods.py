@@ -1,10 +1,13 @@
 from Environment.Xpath_library import Xpath_home as h
 
 base_url = "https://www.pdffiller.com/en/"
-log_in_url = "https://www.pdffiller.com/en/login.htm/"
+log_in_url = "https://www.pdffiller.com/en/login.htm"
 
 login_data = "volodimirchernov@gmail.com"
 password_data = "1"
+
+login_data_test = "chernov.vladimir+paid3@pdffiller.team"
+password_data_test = "123321"
 
 
 # Log In
