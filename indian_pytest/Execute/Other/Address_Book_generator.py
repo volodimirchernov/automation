@@ -17,7 +17,7 @@ def chrome_driver(request):
 
     options = Options()
     options.add_argument("--start-maximized")
-    driver = Chrome("..//Environment//Drivers//chromedriver.exe", chrome_options=options)
+    driver = Chrome("C:\\Users\\volodimirQA\\Documents\\GitHub\\automation\\indian_pytest\\Environment\\Drivers\\chromedriver.exe", chrome_options=options)
 
     # For maximaze (end)
 
@@ -31,18 +31,22 @@ def chrome_driver(request):
 
 
 def test_zero(chrome_driver):
-    email = "volodimirchernov+1@gmail.com"
+    email = "alinachetotam+1@gmail.com"
     contacts_arr = []
-    count = 201
-    while count != 401:
+    count = 966
+    while count != 1001:
         add_email = email.replace("1", str(count))
         contacts_arr.append(add_email)
         count = count + 1
 
     short_authorize(chrome_driver)
-    chrome_driver.get("https://dev5.pdffiller.com/en/export/send/email.htm?id=20845423")
+    chrome_driver.get("https://dev5.pdffiller.com/en/export/send/email.htm?id=201527808")
+    #chrome_driver.get("https://dev5.pdffiller.com/en/export/send/email.htm?id=201515363")
     time.sleep(6)
     for line in contacts_arr:
+        isElement = webdriver.isElementPresent("(.//div[@class='g-form-group']/div[1]/span[1]/div[1]/input)[1]")
+        if(isElement):
+            print(isElement+" - "+str(isElement))
         chrome_driver.find_element_by_xpath("(.//div[@class='g-form-group']/div[1]/span[1]/div[1]/input)[1]").click()
         chrome_driver.find_element_by_xpath("(.//div[@class='g-form-group']/div[1]/span[1]/div[1]/input)[1]").send_keys(line)
         chrome_driver.find_element_by_xpath("(.//span[@class='g-form-add-contact'])[1]").click()
