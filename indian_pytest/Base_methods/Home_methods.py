@@ -1,24 +1,31 @@
+import time
+
 from Environment.Xpath_library import Xpath_home as h
+from Base_methods.Common_methods import *
 
-base_url = "https://www.pdffiller.com/en/"
-log_in_url = "https://www.pdffiller.com/en/login.htm/"
 
-login_data = "volodimirchernov@gmail.com"
+
+# login_data = "alexbieiqa@testqa.com"
+# password_data = "Qawsed123"#
+login_data = "hishka.bohdan@test.com"
 password_data = "1"
+
+login_data_test = "chernov.vladimir+paid3@pdffiller.team"
+password_data_test = "123321"
 
 
 # Log In
 
 
-# Go to home page by url
+# Go to home page by url from properties file
 def visit_live(driver):
-    driver.get(base_url)
+    driver.get(get_property_text("SITE_URL_TEST"))
     return True
 
 
-# Go to log in page by url
+# Go to log in page by url from properties file
 def visit_log_in(driver):
-    driver.get(log_in_url)
+    driver.get(get_property_text("LOGIN_PAGE_URL_TEST"))
     return True
 
 

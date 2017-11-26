@@ -1,7 +1,21 @@
-
 # help to modify xpath  for clear position
 # -- ONLY FOR xpath with construction (xpath)[position]
+from selenium.webdriver.chrome import webdriver
 from selenium.webdriver.support.select import Select
+from selenium import webdriver
+
+
+# get properties by tag name
+def get_property_text(tag):
+    file = open("C:\\Users\\volodimirQA\\Documents\\GitHub\\automation\\indian_pytest\\Environment\\properties.csv", "tr", encoding="utf-8")
+    for line in file:
+        arr_line = line.split()
+        if arr_line[0] == tag:
+            file.close()
+            return arr_line[3]
+        else:
+            file.close()
+            return 0
 
 
 def choose_element_position(xpath, necessary_position):
@@ -58,3 +72,9 @@ def single_select_from_list_multi_mode(chrome_driver, path, way, value):
             if option.text == value:
                 option.click()
                 break
+
+
+# Get count of web element on page
+# - @return int count of elements by xpath
+def count_of_elements_by_xpath(chrome_driver, xpath):
+    return len(chrome_driver.find_elements_by_xpath(xpath))

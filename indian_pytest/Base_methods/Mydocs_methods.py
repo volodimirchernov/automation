@@ -1,6 +1,5 @@
 from Environment.Xpath_library import Xpath_my_docs as md
 
-
 # Choose any file in file list
 
 def chooseFilesInMyDocs(driver):

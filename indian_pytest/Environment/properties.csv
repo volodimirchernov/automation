@@ -1,0 +1,29 @@
+----------- url
+
+SITE_URL_TEST = https://dev5.pdffiller.com/en/
+LOGIN_PAGE_URL_TEST = https://dev5.pdffiller.com/en/login.htm
+
+SITE_URL = https://www.pdffiller.com/en/
+LOGIN_PAGE_URL = https://www.pdffiller.com/en/login.htm
+
+----------- dev experiment panel
+
+DEV_ADMIN_PANEL_LOGIN = iok
+DEV_ADMIN_PANEL_PASSWORD = iok
+
+----------- dev accounts
+
+DEV_ACCOUNT_USER_ID = 11266154
+DEV_ACCOUNT_INNER_EMAIL = d+11266154@pdffiller.com
+DEV_ACCOUNT_LOGIN = pdf_goodqa@support.pdffiller.com
+DEV_ACCOUNT_PASSWORD = 1
+
+----------- live accounts
+
+LIVE_ACCOUNT_USER_ID = 92032041
+LIVE_ACCOUNT_INNER_EMAIL = u+92032041@pdffiller.com
+LIVE_ACCOUNT_LOGIN = pdf_goodqa@support.pdffiller.com
+LIVE_ACCOUNT_PASSWORD = 1
+
+------------
+
