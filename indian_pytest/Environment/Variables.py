@@ -1,3 +1,8 @@
+# live url
+
+live_base_url = "https://www.pdffiller.com/en/"
+live_login_url = "https://www.pdffiller.com/en/login.htm"
+
 # dev experiment panel
 
 login_admin_panel = "iok"
