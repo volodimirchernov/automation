@@ -1,1 +1,4 @@
-{}
+{
+  "Chrome_health_status.py::test_one": true,
+  "Smoke_fast_Chrome.py::test_one": true
+}

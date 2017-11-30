@@ -32,9 +32,9 @@ def test_one(chrome_driver):
     full_authorize(chrome_driver)
     chooseFilesInMyDocs(chrome_driver)
     choose_export_way(chrome_driver, "save as")
-    delete_document_from_list_method(chrome_driver, "1")
-    click_view_document_method(chrome_driver, "1")
-    click_preview_method(chrome_driver)
+    delete_document_from_list(chrome_driver, "1")
+    click_view_document(chrome_driver, "1")
+    click_preview(chrome_driver)
 
 
 @pytest.mark.skip()
