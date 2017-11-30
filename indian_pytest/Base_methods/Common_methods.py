@@ -1,8 +1,22 @@
-
 # help to modify xpath  for clear position
 # -- ONLY FOR xpath with construction (xpath)[position]
+from selenium.webdriver.chrome import webdriver
 from selenium.webdriver.support.select import Select
-import Environment.Variables as vars
+from selenium import webdriver
+
+
+# get properties by tag name
+def get_property_text(tag):
+    file = open("C:\\Users\\volodimirQA\\Documents\\GitHub\\automation\\indian_pytest\\Environment\\properties.csv", "tr", encoding="utf-8")
+    for line in file:
+        arr_line = line.split()
+        if arr_line[0] == tag:
+            file.close()
+            return arr_line[3]
+        else:
+            file.close()
+            return 0
+
 
 def choose_element_position(xpath, necessary_position):
     xpath = xpath.replace("position", necessary_position)
@@ -10,13 +24,13 @@ def choose_element_position(xpath, necessary_position):
 
 
 # get url - simple open page
-def open_page(driver, url_text):
-    driver.get(url_text)
+def open_page(chrome_driver, url_text):
+    chrome_driver.get(url_text)
 
 
 # clear field and input text
-def input_into_field(driver, path, text):
-    element = driver.find_element_by_xpath(path)
+def input_into_field(chrome_driver, path, text):
+    element = chrome_driver.find_element_by_xpath(path)
     element.click()
     element.clear()
     element.send_keys(text)
@@ -24,14 +38,14 @@ def input_into_field(driver, path, text):
 
 
 # click on any button
-def click_button(driver, path):
-    element = driver.find_element_by_xpath(path)
+def click_button(chrome_driver, path):
+    element = chrome_driver.find_element_by_xpath(path)
     element.click()
 
 
 # select from list one value by text
-def single_select_from_list_by_text(driver, path, element_text):
-    select_list_element = driver.find_element_by_xpath(path)
+def single_select_from_list_by_text(chrome_driver, path, element_text):
+    select_list_element = chrome_driver.find_element_by_xpath(path)
     for option in select_list_element.find_elements_by_tag_name('option'):
         if option.text == element_text:
             option.click()
@@ -39,8 +53,8 @@ def single_select_from_list_by_text(driver, path, element_text):
 
 
 # select from list of values by text
-def multi_select_from_list_by_text(driver, path, elements):
-    select_list_element = driver.chrome_driver.find_element_by_xpath(path)
+def multi_select_from_list_by_text(chrome_driver, path, elements):
+    select_list_element = chrome_driver.chrome_driver.find_element_by_xpath(path)
     for option in select_list_element.find_elements_by_tag_name('option'):
         if option.text in elements:
             option.click()
@@ -49,8 +63,8 @@ def multi_select_from_list_by_text(driver, path, elements):
 # Choose from select list by index, or text value
 # - multi way by "text", "index"
 # - Index begin from 0
-def single_select_from_list_multi_mode(driver, path, way, value):
-    select = Select(driver.find_element_by_xpath(path))
+def single_select_from_list_multi_mode(chrome_driver, path, way, value):
+    select = Select(chrome_driver.find_element_by_xpath(path))
     if way == "index":
         select.select_by_index(value)
     else:
@@ -58,44 +72,9 @@ def single_select_from_list_multi_mode(driver, path, way, value):
             if option.text == value:
                 option.click()
                 break
-    return option
 
 
-# Fast enter to export page (single)
-# export_way can be "print", "email", "sms", "fax", "save as"
-def fast_enter_to_single_export(project_id, export_way):
-    if export_way == "print":
-        result_way = vars.print_url.replace("[project_id]", project_id)
-        return open_page(result_way)
-    elif export_way == "email":
-        result_way = vars.email_url.replace("[project_id]", project_id)
-        return open_page(result_way)
-    elif export_way == "sms":
-        result_way = vars.sms_url.replace("[project_id]", project_id)
-        return open_page(result_way)
-    elif export_way == "fax":
-        result_way = vars.fax_url.replace("[project_id]", project_id)
-        return open_page(result_way)
-    elif export_way == "save as":
-        result_way = vars.email_url.replace("[project_id]", project_id)
-        return open_page(result_way)
-    else:
-        return 0
-
-
-# Fast enter to export page (multi)
-# export_way can be "print", "save as"
-def fast_enter_to_multi_export(arr_project_id, export_way):
-    result_way = ""
-    if export_way == "print":
-        for id in arr_project_id:
-            result_way = vars.multi_print_url+id+"&ids[]="
-        return open_page(result_way)
-
-    elif export_way == "save":
-        for id in arr_project_id:
-            result_way = vars.multi_print_url + id + "&ids[]="
-        return open_page(result_way)
-
-    else:
-        return 0
+# Get count of web element on page
+# - @return int count of elements by xpath
+def count_of_elements_by_xpath(chrome_driver, xpath):
+    return len(chrome_driver.find_elements_by_xpath(xpath))

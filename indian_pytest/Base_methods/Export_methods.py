@@ -1,34 +1,29 @@
 from Base_methods.Common_methods import *
 from Environment.Xpath_library.Export.Xpath_common import *
 
-# --- File list
+# File list
 
 
 # delete file on position [1-5]
-def delete_document_from_list(driver, position):
+def delete_document_from_list_method(driver, position):
     delete_file_Element = driver.find_element_by_xpath(choose_element_position(positionable_delete_file_button_Xpath, position))
-    return delete_file_Element.click()
+    delete_file_Element.click()
+    return True
 
 
 # click view document on position [1-5]
-def click_view_document(driver, position):
+def click_view_document_method(driver, position):
     view_document_Element = driver.find_element_by_xpath(choose_element_position(positionable_view_file_button_Xpath, position))
-    return view_document_Element.click()
+    view_document_Element.click()
+    return True
 
 
-# --- Select Pages & Preview
+# Select Pages & Preview
 
 
 # click on preview tab
-def click_preview(driver):
+def click_preview_method(driver):
     preview_Element = driver.find_element_by_xpath(preview_icon_Xpath)
-    return preview_Element.click()
+    preview_Element.click()
+    return True
 
-
-# --- Action toolbar
-
-
-# click on Save as button
-def click_save_as(driver):
-    save_as_button_Element = driver.find_element_by_xpath(save_as_button_Xpath)
-    return save_as_button_Element.click()
