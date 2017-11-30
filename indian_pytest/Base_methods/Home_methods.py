@@ -2,7 +2,7 @@ import time
 
 from Environment.Xpath_library import Xpath_home as h
 from Base_methods.Common_methods import *
-import Environment.Variables as v
+import Environment.Properties as v
 
 # login_data = "alexbieiqa@testqa.com"
 # password_data = "Qawsed123"#
